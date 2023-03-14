@@ -1,0 +1,11 @@
+[Unit]
+
+[Service]
+EnvironmentFile=/django/.env
+WorkingDirectory=/django
+
+ExecStart=/django/.venv/bin/gunicorn --reload -c gunicorn.py project.wsgi:application
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
