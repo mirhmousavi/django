@@ -2,7 +2,7 @@
 
 [Service]
 EnvironmentFile=/home/client/django/.env
-WorkingDirectory=/django
+WorkingDirectory=/home/client/django
 
 ExecStart=/home/client/django/.venv/bin/gunicorn --reload -c gunicorn.py project.wsgi:application
 Restart=on-failure
